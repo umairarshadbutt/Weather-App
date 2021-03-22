@@ -28,7 +28,7 @@ function component() {
     
       let now = new Date();
       let date = document.querySelector('.location .date');
-     
+      date.innerText = dates(now);
     
       let temprature = document.querySelector('.current .temprature');
       temprature.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
@@ -40,7 +40,17 @@ function component() {
       hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
     }
     
+    function dates (d) {
+      let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     
+      let day = days[d.getDay()];
+      let date = d.getDate();
+      let month = months[d.getMonth()];
+      let year = d.getFullYear();
+    
+      return `${day} ${date} ${month} ${year}`;
+    }
     return element;
   }
   
