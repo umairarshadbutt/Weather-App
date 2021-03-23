@@ -12,7 +12,7 @@
 
 ## Live Link Demo
 
-[Live Link Demo](https://rawcdn.githack.com/umairarshadbutt/Weather-App/feature/weather-app/dist/index.html)
+[Live Link Demo](https://rawcdn.githack.com/umairarshadbutt/Weather-App/7351ebd4dfb10a2e9a5bca5a5758bc8f2992f317/dist/index.html)
 
 ## Built With
 
