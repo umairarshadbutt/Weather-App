@@ -31,7 +31,9 @@ function component() {
 
     const weatherElement = document.querySelector('.current .weather');
     weatherElement.innerText = weather.weather[0].main;
-
+    const { icon } = weather.weather[0];
+    const url = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    document.getElementById('imgId').src = url;
     const hilow = document.querySelector('.hi-low');
     hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
   }
