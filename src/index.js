@@ -27,7 +27,11 @@ function component() {
     date.innerText = dates(now);
 
     const temprature = document.querySelector('.current .temprature');
-    temprature.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
+    temprature.innerHTML = `${Math.round(weather.main.temp)}<span>°c | </span>`;
+
+    const tempratureF = document.querySelector('.current .tempratureF');
+    tempratureF.innerHTML = `${Math.round((weather.main.temp * 1.8) + 32)}<span> F</span>`;
+
 
     const weatherElement = document.querySelector('.current .weather');
     weatherElement.innerText = weather.weather[0].main;
@@ -35,7 +39,7 @@ function component() {
     const url = `http://openweathermap.org/img/wn/${icon}@2x.png`;
     document.getElementById('imgId').src = url;
     const hilow = document.querySelector('.hi-low');
-    hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
+    hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c | ${Math.round((weather.main.temp_min * 1.8) + 32)}F / ${Math.round((weather.main.temp_max * 1.8) + 32)} F`;
   }
   function getResults(query) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&APPID=ab8e5103c464904aa015d26efbdb8353`)
